@@ -28,7 +28,8 @@ def gettweets(username):
     finally:
         print('config file exists')
         f.close()
-    
+        
+    configFilePath = 'keys'
     config = configparser.ConfigParser()
     auth = tweepy.OAuthHandler(config.get('auth', 'consumer_key').strip(),config.get('auth', 'consumer_secret').strip())
     auth.set_access_token(config.get('auth', 'access_token').strip(),config.get('auth', 'access_secret').strip())
